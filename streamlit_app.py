@@ -1,16 +1,15 @@
 import streamlit as st
 
 from qpl_app.multipage import MultiPage
-from qpl_app.pages import past_qps, writing_together
-
-import os
+from qpl_app.pages import qp17
 
 app = MultiPage()
 
 st.title('Welcome to the QP Library!')
+user_value = st.text_input('Please Enter Password')
 
-app.add_page('Past QPs', past_qps.app)
-app.add_page('Writing Together', writing_together.app)
+if user_value == st.secrets['password']:
 
-app.run()
+    app.add_page('QP #17', qp17.app)
 
+    app.run()
