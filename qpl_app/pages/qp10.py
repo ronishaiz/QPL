@@ -1,4 +1,4 @@
-from qpl_app.pages.page_utils import qp_page_app
+from page_utils import qp_page_app
 
 
 def app():
