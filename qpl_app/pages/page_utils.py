@@ -2,8 +2,11 @@ import streamlit as st
 from streamlit_player import st_player
 
 
-def qp_page_app(qp_num: int, songs_played_daria: list = None, songs_played_roni: list = None):
+def qp_page_app(qp_num: int, songs_played_daria: list = None, songs_played_roni: list = None, comment: str = None):
     st.header(f"QP #{qp_num}")
+
+    if comment:
+        st.subheader(comment)
 
     # youtube_secret_name = f'QP{qp_num}_youtube_url'
     # st_player(st.secrets[youtube_secret_name])
