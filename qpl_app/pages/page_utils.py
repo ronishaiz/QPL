@@ -8,8 +8,9 @@ def qp_page_app(qp_num: int, songs_played_daria: list = None, songs_played_roni:
     if comment:
         st.subheader(comment)
 
-    # youtube_secret_name = f'QP{qp_num}_youtube_url'
-    # st_player(st.secrets[youtube_secret_name])
+    youtube_secret_name = f'QP{qp_num}_youtube_url'
+    if youtube_secret_name in st.secrets:
+        st_player(st.secrets[youtube_secret_name])
 
     if songs_played_daria:
         st.subheader("Songs Played By Daria")
