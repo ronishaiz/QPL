@@ -6,13 +6,12 @@ def app():
 
     user_value = st.text_area('Enter new writing')
     if user_value:
-        st.secrets['future_writings'].append(user_value)
+        st.secrets['writings_for_future'].append(user_value)
 
-    reset_list = st.button('Reset Writings')
-    if reset_list:
-        st.secrets['future_writings'] = []
+    if st.button('Reset Writings'):
+        st.secrets['writings_for_future'] = []
 
-    for i, writing in enumerate(st.secrets['future_writings']):
+    for i, writing in enumerate(st.secrets['writings_for_future']):
         display_writing(writing, i)
 
 
