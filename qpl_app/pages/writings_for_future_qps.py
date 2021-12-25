@@ -9,7 +9,8 @@ def app():
         st.secrets['writings_for_future'].append(user_value)
 
     if st.button('Reset Writings'):
-        st.secrets['writings_for_future'] = []
+        for item in st.secrets['writings_for_future']:
+            st.secrets['writings_for_future'].remove(item)
 
     for i, writing in enumerate(st.secrets['writings_for_future']):
         display_writing(writing, i)
