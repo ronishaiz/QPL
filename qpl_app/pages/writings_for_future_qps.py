@@ -4,15 +4,20 @@ import streamlit as st
 
 def app():
 
+    secret_name = 'future_writings'
+
     user_value = st.text_area('Enter new writing')
     if user_value:
-        st.secrets['writings_for_future'].append(user_value)
+        st.secrets[secret_name].append(user_value)
 
-    if st.button('Reset Writings'):
-        for item in st.secrets['writings_for_future']:
-            st.secrets['writings_for_future'].remove(item)
+    st.subheader('Delete Writing')
 
-    for i, writing in enumerate(st.secrets['writings_for_future']):
+    to_delete = st.selectbox('select index of writing to delete', [i for i in range(len(st.secrets[secret_name]))])
+
+    if st.button('Remove Writing'):
+        st.secrets[secret_name].remove(st.secrets[secret_name][to_delete])
+
+    for i, writing in enumerate(st.secrets[secret_name]):
         display_writing(writing, i)
 
 
