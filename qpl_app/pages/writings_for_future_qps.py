@@ -8,8 +8,12 @@ def app():
     if user_value:
         st.secrets['future_writings'].append(user_value)
 
-    for writing in st.secrets['future_writings']:
-        display_writing(writing)
+    reset_list = st.button('Reset Writings')
+    if reset_list:
+        st.secrets['future_writings'] = []
+
+    for i, writing in enumerate(st.secrets['future_writings']):
+        display_writing(writing, i)
 
 
 # TODO: solve import error and use display writing from page utils
