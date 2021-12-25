@@ -1,5 +1,4 @@
 import streamlit as st
-from page_utils import display_writing
 
 
 def app():
@@ -14,3 +13,13 @@ def app():
 
     for i, writing in enumerate(all_writings):
         display_writing(writing, i)
+
+
+# TODO: solve import error and use display writing from page utils
+def display_writing(text: str, i: int = None):
+    if i:
+        st.subheader(str(i))
+    split_out = text.split('\n')
+    for line in split_out:
+        text = f'<p style="font-family:Arial; font-size: 16px;">{line}</p>'
+        st.markdown(text, unsafe_allow_html=True)
