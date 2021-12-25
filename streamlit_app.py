@@ -1,7 +1,8 @@
 import streamlit as st
 
 from qpl_app.multipage import MultiPage
-from qpl_app.pages import qp5, qp6, qp7, qp8, qp9, qp10, qp11, qp12, qp13, qp14, qp15, qp16, qp17, all_writings
+from qpl_app.pages import qp5, qp6, qp7, qp8, qp9, qp10, qp11, qp12, qp13, qp14, qp15, qp16, qp17,\
+    all_writings, writings_for_future_qps
 
 app = MultiPage()
 
@@ -17,5 +18,6 @@ if user_value == st.secrets['password']:
         app.add_page(f'QP #{num}', qp.app)
 
     app.add_page('All Writings', all_writings.app)
+    app.add_page('Writings for Future QPs', writings_for_future_qps.app)
 
     app.run()
