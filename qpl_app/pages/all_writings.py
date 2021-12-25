@@ -1,5 +1,5 @@
 import streamlit as st
-from qpl_app.pages.page_utils import display_writing
+from page_utils import display_writing
 
 
 def app():
