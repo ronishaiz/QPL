@@ -37,7 +37,7 @@ def get_all_text_from_qp(qp_num: int):
 
 
 def display_writing(text: str, i: int = None):
-    if i:
+    if i is not None:
         st.subheader(str(i))
     split_out = text.split('\n')
     for line in split_out:
