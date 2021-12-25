@@ -29,3 +29,4 @@ def display_writing(text: str, i: int = None):
     for line in split_out:
         text = f'<p style="font-family:Arial; font-size: 16px;">{line}</p>'
         st.markdown(text, unsafe_allow_html=True)
+
