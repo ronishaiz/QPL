@@ -9,8 +9,10 @@ def qp_page_app(qp_num: int, songs_played_daria: list = None, songs_played_roni:
         st.subheader(comment)
 
     audio_secret_name = f'QP{qp_num}_audio'
-    if audio_secret_name in st.secrets:
-        st.audio(st.secrets[audio_secret_name])
+    for person in ['Daria', 'Roni']:
+        if f'{audio_secret_name}_{person}' in st.secrets:
+            st.subheader(f"{person}'s Party")
+            st.audio(st.secrets[audio_secret_name], format='audio/mp3')
 
     if songs_played_daria:
         st.subheader("Songs Played By Daria")
