@@ -18,6 +18,6 @@ if user_value == st.secrets['password']:
         app.add_page(f'QP #{num}', qp.app)
 
     app.add_page('All Writings', all_writings.app)
-    app.add_page('Writings for Future QPs', writings_for_future_qps.app)
+    # app.add_page('Writings for Future QPs', writings_for_future_qps.app)
 
     app.run()
